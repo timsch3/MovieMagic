@@ -13,17 +13,22 @@
         <%= activePage %>
     </h2>
     <!-- show movies page 1 -->
-    <% for (let i=activePage - 5; i>= activePage - 5 && i <= activePage + 5; i++) { %>
+    <% for (let i = activePage; i <= activePage + 10 /* movies per page */ && i <= activePage + 5; i++) { %>
             <p>
                 <%= movies[i].title %>
             </p>
             <% } %>
-                <!-- pages navigation -->
-                <% for (let i=activePage - 5; i>= activePage - 5 && i <= activePage + 5; i++) { %>
-                        <a href="<%= i %>">
-                            <%= i %>
-                        </a>
-                        <% } %>
+    <!-- pages navigation -->
+    <% if (activePage < 5) {
+        for (let i=0; i < 10; i++) { %>
+                <a href="<%= i %>"><%= i %></a>
+        <% }
+    }
+        else {
+            for (let i=activePage - 5; i>= activePage - 5 && i <= activePage + 5; i++) { %>
+            <a href="<%= i %>"><%= i %></a>
+            <% } 
+        }%>
 </body>
 
 </html>

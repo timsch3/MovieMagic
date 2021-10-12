@@ -1,7 +1,7 @@
 const ejs = require('ejs');
 const express = require('express')
 const app = express()
-let activePage = 0
+let activePage
 // placeholder objects
 let movies = require('./data')
 
