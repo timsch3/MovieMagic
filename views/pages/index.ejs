@@ -9,18 +9,15 @@
 </head>
 
 <body>
-    <h2>
-        <%= activePage %>
-    </h2>
-    <!-- show movies page 1 -->
-    <% for (let i = activePage; i <= activePage + 10 /* movies per page */ && i <= activePage + 5; i++) { %>
+    <!-- show movies page -->
+    <% for (let i = activePage * moviesPerPage - moviesPerPage; i < activePage * moviesPerPage; i++) { %>
             <p>
                 <%= movies[i].title %>
             </p>
             <% } %>
     <!-- pages navigation -->
-    <% if (activePage < 5) {
-        for (let i=0; i < 10; i++) { %>
+    <% if (activePage <= 5) {
+        for (let i=1; i <= 10; i++) { %>
                 <a href="<%= i %>"><%= i %></a>
         <% }
     }
