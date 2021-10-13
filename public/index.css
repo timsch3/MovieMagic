@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+header {
+    padding-bottom: 5vh;
+}
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.movie {
+    width: 20vw;
+    padding-bottom: 5vh;
+    text-align: center;
+}
