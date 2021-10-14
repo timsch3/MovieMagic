@@ -8,7 +8,7 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
-    axios.get('https://api.themoviedb.org/3/discover/movie?api_key=3dec7146ea3697eb18b4879a213a0de1')
+    axios.get('https://api.themoviedb.org/3/discover/movie?api_key=3dec7146ea3697eb18b4879a213a0de1&include_adult=false')
     .then(function (response) {
         res.render('pages/index', { movies: response.data, activePage: 1 })
     })
@@ -28,7 +28,7 @@ app.get('/details/:id', (req, res) => {
 })
 
 app.get('/page/:page', (req, res) => {
-    axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=3dec7146ea3697eb18b4879a213a0de1&page=${req.params.page}`)
+    axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=3dec7146ea3697eb18b4879a213a0de1&include_adult=false&page=${req.params.page}`)
     .then(function (response) {
         res.render('pages/index', { movies: response.data, activePage: Number(req.params.page) })
     })

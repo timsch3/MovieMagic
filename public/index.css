@@ -27,7 +27,7 @@ main {
 /* MOVIE CARDS */
 .movie {
     font-size: 1rem;
-    max-width: 20vw;
+    width: 20vw;
     margin-bottom: 5vh;
     text-align: center;
 }

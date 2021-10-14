@@ -6,6 +6,9 @@ header {
     justify-content: space-between;
     background-color: #4F4F4F;
 }
+header h1 {
+    letter-spacing: 1px;
+}
 header input {
     padding: 3px 10px;
     border-radius: 15px;
