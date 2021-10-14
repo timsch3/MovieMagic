@@ -6,35 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../index.css">
+    <link rel="stylesheet" href="../../partials.css">
     <title>Movie Magic</title>
 </head>
 
 <body>
     <%- include('../partials/header') %>
-    <!-- show movies page -->
     <main>
-        <% movies.forEach(movie => { %>
+        <% movies.results.forEach(movie => { %>
             <div class="movie">
                 <a href="/details/<%= movie.id %>">
-                    <img src="https://image.tmdb.org/t/p/w200<%= movie.poster_path %>" alt="<%= movie.title %>">
-                    <h3>
+                    <img src="https://image.tmdb.org/t/p/w300<%= movie.poster_path %>" alt="<%= movie.title %>">
+                    <p>
                         <%= movie.title %>
-                    </h3>
+                    </p>
                 </a>
             </div>
         <% }) %>
-        <!-- pages navigation -->
-        <% if (activePage <= 5) {
-            for (let i=1; i <= 10; i++) { %>
-                    <a href="<%= i %>"><%= i %></a>
-            <% }
-        }
-            else {
-                for (let i = activePage - 5; i <= activePage + 5; i++) { %>
-                <a href="<%= i %>"><%= i %></a>
-                <% }
-            }%>
     </main>
+    <%- include('../partials/footer', {totalPages: movies.total_pages}) %>
 </body>
 
 </html>

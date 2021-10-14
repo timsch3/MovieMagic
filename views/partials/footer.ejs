@@ -1,0 +1,34 @@
+<footer>
+    <% if (activePage > 1) {%>
+        <a href="/page/1"><<</a>
+        <a href="/page/<%= activePage - 1 %>"><</a>
+        <% } %>
+    <% if (activePage <= 5) {
+        for (let i=1; i <= 10; i++) { 
+            if (i == activePage) { %>
+                <a href="/page/<%= i %>" class="activePage"><%= i %></a>
+            <% } else { %>
+                <a href="/page/<%= i %>"><%= i %></a>
+        <% }}
+    }
+        else if (activePage >= totalPages - 5) {
+            for (let i = totalPages - 10; i <= totalPages; i++) { 
+                if (i == activePage) { %>
+                    <a href="/page/<%= i %>" class="activePage"><%= i %></a>
+            <% } else { %>
+                <a href="/page/<%= i %>"><%= i %></a>
+        <% }}
+        }
+        else {
+            for (let i = activePage - 5; i <= activePage + 5; i++) { 
+                if (i == activePage) { %>
+                    <a href="/page/<%= i %>" class="activePage"><%= i %></a>
+                <% } else { %>
+                    <a href="/page/<%= i %>"><%= i %></a>
+            <% }}
+        }%>
+    <% if (activePage < totalPages) { %>
+        <a href="/page/<%= activePage + 1 %>">></a>
+        <a href="/page/<%= totalPages %>">>></a>
+    <% } %>
+</footer>
