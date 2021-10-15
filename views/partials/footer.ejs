@@ -1,34 +1,40 @@
 <footer>
-    <% if (activePage > 1) {%>
-        <a href="/page/1"><<</a>
-        <a href="/page/<%= activePage - 1 %>"><</a>
-        <% } %>
-    <% if (activePage <= 5) {
-        for (let i=1; i <= 10; i++) { 
-            if (i == activePage) { %>
-                <a href="/page/<%= i %>" class="activePage"><%= i %></a>
-            <% } else { %>
-                <a href="/page/<%= i %>"><%= i %></a>
-        <% }}
+    <% let path
+    if (genreChosen) {
+        path = `/genre/${genreID}/page/`
+    } else {
+        path = '/page/'
     }
-        else if (activePage >= totalPages - 5) {
-            for (let i = totalPages - 10; i <= totalPages; i++) { 
+        if (activePage > 1) {%>
+            <a href="<%= path %>"><<</a>
+            <a href="<%= path %><%= activePage - 1 %>"><</a>
+            <% } %>
+        <% if (activePage <= 5) {
+            for (let i=1; i <= 10; i++) { 
                 if (i == activePage) { %>
-                    <a href="/page/<%= i %>" class="activePage"><%= i %></a>
-            <% } else { %>
-                <a href="/page/<%= i %>"><%= i %></a>
-        <% }}
-        }
-        else {
-            for (let i = activePage - 5; i <= activePage + 5; i++) { 
-                if (i == activePage) { %>
-                    <a href="/page/<%= i %>" class="activePage"><%= i %></a>
+                    <a href="<%= path %><%= i %>" class="activePage"><%= i %></a>
                 <% } else { %>
-                    <a href="/page/<%= i %>"><%= i %></a>
+                    <a href="<%= path %><%= i %>"><%= i %></a>
             <% }}
-        }%>
-    <% if (activePage < totalPages) { %>
-        <a href="/page/<%= activePage + 1 %>">></a>
-        <a href="/page/<%= totalPages %>">>></a>
-    <% } %>
+        }
+            else if (activePage >= totalPages - 5) {
+                for (let i = totalPages - 10; i <= totalPages; i++) { 
+                    if (i == activePage) { %>
+                        <a href="<%= path %><%= i %>" class="activePage"><%= i %></a>
+                <% } else { %>
+                    <a href="<%= path %><%= i %>"><%= i %></a>
+            <% }}
+            }
+            else {
+                for (let i = activePage - 5; i <= activePage + 5; i++) { 
+                    if (i == activePage) { %>
+                        <a href="<%= path %><%= i %>" class="activePage"><%= i %></a>
+                    <% } else { %>
+                        <a href="<%= path %><%= i %>"><%= i %></a>
+                <% }}
+            }%>
+        <% if (activePage < totalPages) { %>
+            <a href="<%= path %><%= activePage + 1 %>">></a>
+            <a href="<%= path %><%= totalPages %>">>></a>
+        <% } %>
 </footer>

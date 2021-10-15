@@ -1,12 +1,15 @@
 <header>
     <a href="/">
         <h1>
-            MOVIEMAGIC
+            MOVIE MAGIC
         </h1>
     </a>
     <div>
-        <img src="/magnifier.svg" alt="">
-        <input type="text" name="searchInput" id="searchInput">
-        <input type="button" value="Search"> 
+        <form action="/search" method="GET">
+            <img src="/magnifier.svg" alt="">
+            <input type="text" name="searchInput" id="searchInput">
+            <input type="submit" value="Search">
+        </form>
+
     </div>
 </header>

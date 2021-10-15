@@ -5,24 +5,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../index.css">
-    <link rel="stylesheet" href="../../partials.css">
+    <link rel="stylesheet" href="/index.css" type="text/css">
+    <link rel="stylesheet" href="/partials.css" type="text/css">
     <title>Movie Magic</title>
 </head>
 
 <body>
     <%- include('../partials/header') %>
     <main>
-        <% movies.results.forEach(movie => { %>
-            <div class="movie">
-                <a href="/details/<%= movie.id %>">
-                    <img src="https://image.tmdb.org/t/p/w300<%= movie.poster_path %>" alt="<%= movie.title %>">
-                    <p>
-                        <%= movie.title %>
-                    </p>
-                </a>
-            </div>
-        <% }) %>
+        <section id="genres">
+            <ul>
+                <a href="/genre/28/page/1"><li>Action</li></a>
+                <a href="/genre/12/page/1"><li>Adventure</li></a>
+                <a href="/genre/16/page/1"><li>Animation</li></a>
+                <a href="/genre/35/page/1"><li>Comedy</li></a>
+                <a href="/genre/80/page/1"><li>Crime</li></a>
+                <a href="/genre/99/page/1"><li>Documentary</li></a>
+                <a href="/genre/18/page/1"><li>Drama</li></a>
+                <a href="/genre/10751/page/1"><li>Family</li></a>
+                <a href="/genre/14/page/1"><li>Fantasy</li></a>
+                <a href="/genre/36/page/1"><li>History</li></a>
+                <a href="/genre/27/page/1"><li>Horror</li></a>
+                <a href="/genre/10402/page/1"><li>Music</li></a>
+                <a href="/genre/9648/page/1"><li>Mystery</li></a>
+                <a href="/genre/10749/page/1"><li>Romance</li></a>
+                <a href="/genre/878/page/1"><li>Science Fiction</li></a>
+                <a href="/genre/10770/page/1"><li>TV Movie</li></a>
+                <a href="/genre/53/page/1"><li>Thriller</li></a>
+                <a href="/genre/10752/page/1"><li>War</li></a>
+                <a href="/genre/37/page/1"><li>Western</li></a>
+            </ul>
+        </section>
+        <section id="movies">
+            <% movies.results.forEach(movie => { %>
+                <div class="movie">
+                    <a href="/details/<%= movie.id %>">
+                        <img src="https://image.tmdb.org/t/p/w300<%= movie.poster_path %>" alt="<%= movie.title %>">
+                        <p>
+                            <%= movie.title %>
+                        </p>
+                    </a>
+                </div>
+            <% }) %>
+        </section>
     </main>
     <%- include('../partials/footer', {totalPages: movies.total_pages}) %>
 </body>
