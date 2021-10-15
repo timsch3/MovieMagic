@@ -4,7 +4,8 @@
   "description": "Using Node.js with Express.js, EJS and axios to build a dynamically generated website with data from the themoviedb.org API.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "index.js"
   },
   "author": "",
   "license": "ISC",
@@ -12,7 +13,8 @@
     "axios": "^0.22.0",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "heroku": "^7.59.0"
   },
   "repository": {
     "type": "git",
