@@ -8,6 +8,7 @@ header {
 }
 header h1 {
     letter-spacing: 1px;
+    font-size: 2rem;
 }
 header input {
     padding: 3px 10px;

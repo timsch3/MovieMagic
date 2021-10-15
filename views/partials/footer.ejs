@@ -2,6 +2,8 @@
     <% let path
     if (genreChosen) {
         path = `/genre/${genreID}/page/`
+    } else if (searchTermEntered) {
+        path = `/search/${searchTerm}/page/`    
     } else {
         path = '/page/'
     }
