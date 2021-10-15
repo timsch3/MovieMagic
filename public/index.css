@@ -18,7 +18,7 @@ body {
     flex-direction: column;
     background-color: #333;
 }
-/* universal genres style */
+/* universal genre style */
 #genres li, .genresRating li {
     border: 1.5px solid #666;
     border-radius: 15px;
@@ -56,6 +56,9 @@ body {
     padding: 0 20px;
 }
 /* DETAILS PAGE */
+.detailsMain h2 {
+    font-size: 1.7rem;
+}
 .detailsMain {
     flex-wrap: nowrap;
     flex-direction: column;
@@ -74,6 +77,9 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+.genresRating li:first-of-type {
+    margin-left: 0;
 }
 .genresRating ul {
     list-style: none;
