@@ -1,10 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-/*
-#11052C
-#3D087B
-#F43B86
-#FFE459
-*/
 * {
     margin: 0;
     padding: 0;
@@ -24,6 +18,11 @@ body {
     border-radius: 15px;
     padding: 2px 7.5px;
     margin: 5px;
+    transition: 0.2s;
+}
+#genres li:hover {
+    color: #000;
+    background-color: #ccc;
 }
 /* INDEX PAGE */
 #genres {
@@ -47,6 +46,10 @@ body {
     width: 20vw;
     margin-bottom: 5vh;
     text-align: center;
+    transition: 0.2s;
+}
+.movie:hover {
+    transform: scale(1.05)
 }
 .movie img {
     width: 100%;

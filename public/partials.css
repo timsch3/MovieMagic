@@ -9,6 +9,10 @@ header {
 header h1 {
     letter-spacing: 1px;
     font-size: 2rem;
+    transition: 0.2s;
+}
+header h1:hover {
+    color: #ccc;
 }
 header input {
     padding: 3px 10px;
@@ -42,6 +46,11 @@ footer a {
     margin-right: 5px;
     background-color: #444;
     border-radius: 5px;
+}
+footer a:hover {
+    color: #000;
+    background-color: #ccc;
+    transition: 0.2s;
 }
 .activePage {
     background-color: #666;
