@@ -20,7 +20,7 @@ body {
     margin: 5px;
     transition: 0.2s;
 }
-#genres li:hover {
+#genres li:hover, .active-genre-li {
     color: #000;
     background-color: #ccc;
 }
@@ -44,15 +44,18 @@ body {
 .movie {
     font-size: 1rem;
     width: 20vw;
-    margin-bottom: 5vh;
+    height: 75vh;
+    margin-bottom: 3vh;
     text-align: center;
     transition: 0.2s;
 }
 .movie:hover {
-    transform: scale(1.05)
+    transform: scale(1.025)
 }
 .movie img {
     width: 100%;
+    min-height: 80%;
+    object-fit: cover;
     border-radius: 15px;
 }
 .movie p {
