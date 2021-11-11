@@ -5,5 +5,6 @@ Heroku deployment: https://timsch3-moviemagic.herokuapp.com/
 
 Planned features:
 - Showing active genre ✔
+- Remove genre filter by clicking on the active genre
 - Clickable genres on details page
 - Sorting movies by various categories the API offers (right now only popularity by default)
