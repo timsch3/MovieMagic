@@ -72,9 +72,6 @@ body {
 }
 .detailsMain img {
     width: 100%;
-    max-height: 50vh;
-    object-fit: cover;
-    object-position: 0% 30%;
 }
 .titleRelease, .genresRating, .overview {
     padding: 2vh 5vw 2vh 5vw;
@@ -90,4 +87,7 @@ body {
 .genresRating ul {
     list-style: none;
     display: flex;
+}
+.overview {
+    padding-bottom: 50px;
 }
