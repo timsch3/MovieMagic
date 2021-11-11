@@ -38,14 +38,13 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 3vh 5vw 2vh 5vw;
+    padding: 30px 5vw 2vh 5vw;
 }
 /* movie cards */
 .movie {
     font-size: 1rem;
     width: 20vw;
-    height: 75vh;
-    margin-bottom: 3vh;
+    margin-bottom: 30px;
     text-align: center;
     transition: 0.2s;
 }
