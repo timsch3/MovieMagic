@@ -1,7 +1,7 @@
 # MovieMagic
 Using Node.js with Express.js, EJS and axios to build a dynamically generated website with data from the themoviedb.org API.
 
-Heroku deployment: https://murmuring-harbor-53323.herokuapp.com/
+Heroku deployment: https://timsch3-moviemagic.herokuapp.com/
 
 Planned features:
 - Showing active genre
