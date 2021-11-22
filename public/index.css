@@ -1,92 +1,99 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 * {
-    margin: 0;
-    padding: 0;
-    color: #FFF;
-    text-decoration: none;
-    font-family: Poppins, sans-serif;
-    font-size: 16px;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  text-decoration: none;
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
 }
 body {
-    display: flex;
-    flex-direction: column;
-    background-color: #333;
+  display: flex;
+  flex-direction: column;
+  background-color: #333;
 }
 /* universal genre style */
-#genres li, .genresRating li {
-    border: 1.5px solid #666;
-    border-radius: 15px;
-    padding: 2px 7.5px;
-    margin: 5px;
-    transition: 0.2s;
+#genres li,
+.genresRating li {
+  border: 1.5px solid #666;
+  border-radius: 15px;
+  padding: 2px 7.5px;
+  margin: 5px;
+  transition: 0.2s;
 }
-#genres li:hover, .active-genre-li {
-    color: #000;
-    background-color: #ccc;
+#genres li:hover,
+.active-genre-li {
+  color: #000;
+  background-color: #ccc;
 }
 /* INDEX PAGE */
 #genres {
-    padding: 3vh 5vw 0 5vw;
+  padding: 3vh 5vw 0 5vw;
 }
 #genres ul {
-    list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 #movies {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 30px 5vw 2vh 5vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 30px 5vw 2vh 5vw;
 }
 /* movie cards */
 .movie {
-    font-size: 1rem;
-    width: 20vw;
-    margin-bottom: 30px;
-    text-align: center;
-    transition: 0.2s;
+  font-size: 1rem;
+  width: 20vw;
+  margin-bottom: 30px;
+  text-align: center;
+  transition: 0.2s;
 }
 .movie:hover {
-    transform: scale(1.025)
+  transform: scale(1.025);
 }
 .movie img {
-    width: 100%;
-    min-height: 80%;
-    object-fit: cover;
-    border-radius: 15px;
+  width: 100%;
+  min-height: 80%;
+  object-fit: cover;
+  border-radius: 15px;
 }
 .movie p {
-    padding: 0 20px;
+  padding: 0 20px;
 }
 /* DETAILS PAGE */
 .detailsMain h2 {
-    font-size: 1.7rem;
+  font-size: 1.7rem;
 }
 .detailsMain {
-    flex-wrap: nowrap;
-    flex-direction: column;
-    padding: 0;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  padding: 0;
 }
 .detailsMain img {
-    width: 100%;
+  width: 100%;
+  height: 75vh;
+  object-fit: contain;
 }
-.titleRelease, .genresRating, .overview {
-    padding: 2vh 5vw 2vh 5vw;
+.titleRelease,
+.genresRating,
+.overview {
+  padding: 2vh 5vw 2vh 5vw;
 }
-.titleRelease, .genresRating {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.titleRelease,
+.genresRating {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .genresRating li:first-of-type {
-    margin-left: 0;
+  margin-left: 0;
 }
 .genresRating ul {
-    list-style: none;
-    display: flex;
+  list-style: none;
+  display: flex;
 }
 .overview {
-    padding-bottom: 50px;
+  padding-bottom: 50px;
 }

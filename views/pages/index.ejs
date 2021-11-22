@@ -15,6 +15,9 @@
         <main>
             <section id="genres">
                 <ul>
+                    <a href="/">
+                        <li>Show all genres</li>
+                    </a>
                     <% genreList.forEach(genre=> { %>
                         <a href="/genre/<%- genre.id %>/page/1">
                             <li <% if (genreChosen) { if (genreID==genre.id) {%> class="active-genre-li" <% }}%>>
