@@ -16,7 +16,7 @@
             <section id="genres">
                 <ul>
                     <a href="/">
-                        <li>Show all genres</li>
+                        <li>All genres</li>
                     </a>
                     <% genreList.forEach(genre=> { %>
                         <a href="/genre/<%- genre.id %>/page/1">
@@ -27,9 +27,9 @@
                         <% }) %>
                 </ul>
             </section>
-            <section id="movies">
+            <section id="moviesList">
                 <% movies.results.forEach(movie=> { %>
-                    <div class="movie">
+                    <div class="movieCard">
                         <a href="/details/<%= movie.id %>">
                             <% if (movie.poster_path !=null) {%>
                                 <img src="https://image.tmdb.org/t/p/w300<%= movie.poster_path %>"

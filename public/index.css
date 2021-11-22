@@ -1,8 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@font-face {
+  font-family: Poppins;
+  src: url("Poppins-Regular.ttf");
+}
+:root {
+  --bg-color: #333;
+  --bg-color-header: #4f4f4f;
+  --text-color: #fff;
+  --border-color: #666;
+  --hover-text-color: #000;
+  --hover-bg-color: #ccc;
+  --img-bg-color: #000;
+  --shadow-color: #222;
+}
 * {
   margin: 0;
   padding: 0;
-  color: #fff;
+  color: var(--text-color);
   text-decoration: none;
   font-family: Poppins, sans-serif;
   font-size: 16px;
@@ -10,12 +23,12 @@
 body {
   display: flex;
   flex-direction: column;
-  background-color: #333;
+  background-color: var(--bg-color);
 }
-/* universal genre style */
+/* universal genre button style */
 #genres li,
 .genresRating li {
-  border: 1.5px solid #666;
+  border: 1.5px solid var(--border-color);
   border-radius: 15px;
   padding: 2px 7.5px;
   margin: 5px;
@@ -23,10 +36,10 @@ body {
 }
 #genres li:hover,
 .active-genre-li {
-  color: #000;
-  background-color: #ccc;
+  color: var(--hover-text-color);
+  background-color: var(--hover-bg-color);
 }
-/* INDEX PAGE */
+/* ==================== INDEX PAGE */
 #genres {
   padding: 3vh 5vw 0 5vw;
 }
@@ -36,33 +49,38 @@ body {
   flex-wrap: wrap;
   justify-content: center;
 }
-#movies {
+#moviesList {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 30px 5vw 2vh 5vw;
 }
 /* movie cards */
-.movie {
+.movieCard {
   font-size: 1rem;
   width: 20vw;
   margin-bottom: 30px;
   text-align: center;
   transition: 0.2s;
 }
-.movie:hover {
+.movieCard:hover {
   transform: scale(1.025);
 }
-.movie img {
+.movieCard img {
   width: 100%;
   min-height: 80%;
   object-fit: cover;
   border-radius: 15px;
+  box-shadow: 5px 5px 5px 0 var(--shadow-color);
+  transition: 0.2s;
 }
-.movie p {
+.movieCard img:hover {
+  box-shadow: 2.5px 2.5px 5px 0 var(--shadow-color);
+}
+.movieCard p {
   padding: 0 20px;
 }
-/* DETAILS PAGE */
+/* ==================== DETAILS PAGE */
 .detailsMain h2 {
   font-size: 1.7rem;
 }
@@ -75,6 +93,7 @@ body {
   width: 100%;
   height: 75vh;
   object-fit: contain;
+  background-color: var(--img-bg-color);
 }
 .titleRelease,
 .genresRating,
