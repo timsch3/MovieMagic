@@ -1,51 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/index.css" type="text/css" />
+    <link rel="stylesheet" href="/partials.css" type="text/css" />
+    <title>Movie Magic – <%= movie.title %></title>
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/index.css" type="text/css">
-    <link rel="stylesheet" href="/partials.css" type="text/css">
-    <title>Movie Magic – <%= movie.title %>
-    </title>
-</head>
-
-<body>
+  <body>
     <%- include('../partials/header') %>
-        <main class="detailsMain">
-            <% if (movie.backdrop_path !=null) {%>
-                <img src="https://image.tmdb.org/t/p/original<%= movie.backdrop_path %>" alt="<%= movie.title %>">
-                <%} else {%><br>
-                    <%}%>
-                        <div class="titleRelease">
-                            <h2>
-                                <%= movie.title %>
-                            </h2>
-                            <p>
-                                Released: <%= movie.release_date %>
-                            </p>
-                        </div>
-                        <div class="genresRating">
-                            <ul>
-                                <% movie.genres.forEach(genre=> {
-                                    %><li>
-                                        <%= genre.name %>
-                                    </li>
-                                    <% }) %>
-                            </ul>
-                            <p>
-                                Rating: <%= movie.vote_average %>
-                            </p>
-                        </div>
-                        <p class="overview">
-                            <% if (movie.overview !=null) { %>
-                                <%= movie.overview %>
-                                    <% } else { %>
-                                        (No plot summary available.)
-                                        <% } %>
-                        </p>
-        </main>
-</body>
-
+    <main class="detailsMain">
+      <!-- Movie backdrop image -->
+      <% if (movie.backdrop_path !=null) {%>
+      <img
+        src="https://image.tmdb.org/t/p/original<%= movie.backdrop_path %>"
+        alt="<%= movie.title %>"
+      />
+      <%} else {%><br />
+      <%}%>
+      <!-- Title and release date -->
+      <div class="titleRelease">
+        <h2><%= movie.title %></h2>
+        <p>Released: <%= movie.release_date %></p>
+      </div>
+      <!-- Genres and movie rating -->
+      <div class="genresRating">
+        <ul>
+          <% movie.genres.forEach(genre=> { %>
+          <li><%= genre.name %></li>
+          <% }) %>
+        </ul>
+        <p>Rating: <%= movie.vote_average %></p>
+      </div>
+      <p class="overview">
+        <% if (movie.overview !=null) { %> <%= movie.overview %> <% } else { %>
+        (No plot summary available.) <% } %>
+      </p>
+    </main>
+  </body>
 </html>
