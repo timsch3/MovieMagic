@@ -32,12 +32,17 @@
                 <section id="sorting"> <!-- Sorting options -->
                     <h2>Sort by:</h2>
                     <ul>
-                        <li>Popularity</li>
-                        <li>Rating</li>
+                        <a href="/sorting/popular">
+                            <li <% if (activeSorting == "popular") {%>
+                                id="activeSorting" <% } %>}>Most popular</li>
+                        </a>
+                        <a href="/sorting/top_rated">
+                            <li <% if (activeSorting == "top_rated") {%>
+                                id="activeSorting" <% } %>}>Top rated</li>
+                        </a>
                     </ul>
                 </section>
             </div>
-
             <section id="moviesList"> <!-- Movies list -->
                 <% movies.results.forEach(movie=> { %>
                     <div class="movieCard">

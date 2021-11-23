@@ -3,7 +3,6 @@ const dotenv = require("dotenv").config();
 const express = require("express");
 const app = express();
 const axios = require("axios").default;
-const sharedFunctions = require("./sharedFunctions");
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -25,14 +24,25 @@ if (!gotGenreList) {
     });
 }
 
+let sorting = "popular"; // default sorting
+let lastUrl = ""; // set on every request for redirecting after sorting change
+
+// CHANGE SORTING
+app.get("/sorting/:sorting", (req, res) => {
+  sorting = req.params.sorting;
+  res.redirect(lastUrl);
+});
+
 // HOME
 app.get("/", (req, res) => {
+  lastUrl = req.originalUrl;
   axios
     .get(
       `https://api.themoviedb.org/3/movie/${sorting}?api_key=${process.env.API_KEY}`
     )
     .then(function (response) {
       res.render("pages/index", {
+        activeSorting: sorting,
         genreList,
         movies: response.data,
         activePage: 1,
@@ -48,12 +58,14 @@ app.get("/", (req, res) => {
 
 // PAGES
 app.get("/page/:page", (req, res) => {
+  lastUrl = req.originalUrl;
   axios
     .get(
-      `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}&page=${req.params.page}`
+      `https://api.themoviedb.org/3/movie/${sorting}?api_key=${process.env.API_KEY}&page=${req.params.page}`
     )
     .then(function (response) {
       res.render("pages/index", {
+        activeSorting: sorting,
         genreList,
         movies: response.data,
         activePage: Number(req.params.page),
@@ -69,12 +81,14 @@ app.get("/page/:page", (req, res) => {
 
 // GENRES
 app.get("/genre/:id/page/:page", (req, res) => {
+  lastUrl = req.originalUrl;
   axios
     .get(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&with_genres=${req.params.id}&page=${req.params.page}`
+      `https://api.themoviedb.org/3/movie/${sorting}?api_key=${process.env.API_KEY}&with_genres=${req.params.id}&page=${req.params.page}`
     )
     .then(function (response) {
       res.render("pages/index", {
+        activeSorting: sorting,
         genreList,
         movies: response.data,
         activePage: Number(req.params.page),
@@ -96,12 +110,14 @@ app.get("/search?:term", (req, res) => {
   else res.redirect("/");
 });
 app.get("/search/:term/page/:page", (req, res) => {
+  lastUrl = req.originalUrl;
   axios
     .get(
       `https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&query=${req.params.term}&page=${req.params.page}`
     )
     .then(function (response) {
       res.render("pages/index", {
+        activeSorting: sorting,
         genreList,
         movies: response.data,
         activePage: Number(req.params.page),

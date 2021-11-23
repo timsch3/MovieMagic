@@ -55,14 +55,13 @@ body {
   display: flex;
   align-items: center;
   padding: 3vh 5vw 0 1.25vw;
+  white-space: nowrap;
 }
 #sorting ul {
   list-style-type: none;
-  display: flex;
-  flex-wrap: wrap;
 }
-#sorting li {
-  margin: 2.5px;
+#activeSorting {
+  text-decoration: underline;
 }
 #sorting li:hover {
   text-decoration: underline;
