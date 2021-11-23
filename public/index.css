@@ -40,8 +40,36 @@ body {
   background-color: var(--hover-bg-color);
 }
 /* ==================== INDEX PAGE */
+#genresSorting {
+  display: flex;
+  justify-content: space-between;
+  max-width: 100vw;
+}
+#genresSorting h2 {
+  display: flex;
+  align-items: center;
+  padding-right: 15px;
+  white-space: nowrap;
+}
+#sorting {
+  display: flex;
+  align-items: center;
+  padding: 3vh 5vw 0 1.25vw;
+}
+#sorting ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+#sorting li {
+  margin: 2.5px;
+}
+#sorting li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
 #genres {
-  padding: 3vh 5vw 0 5vw;
+  padding: 3vh 1.25vw 0 5vw;
 }
 #genres ul {
   list-style-type: none;

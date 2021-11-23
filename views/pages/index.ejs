@@ -13,21 +13,33 @@
 <body>
     <%- include('../partials/header') %>
         <main>
-            <section id="genres">
-                <ul>
-                    <a href="/">
-                        <li>All genres</li>
-                    </a>
-                    <% genreList.forEach(genre=> { %>
-                        <a href="/genre/<%- genre.id %>/page/1">
-                            <li <% if (genreChosen) { if (genreID==genre.id) {%> class="active-genre-li" <% }}%>>
-                                    <%= genre.name %>
-                            </li>
+            <div id="genresSorting">
+                <section id="genres"> <!-- Genres list -->
+                    <ul>
+                        <h2>Show genres:</h2>
+                        <a href="/">
+                            <li>All genres</li>
                         </a>
-                        <% }) %>
-                </ul>
-            </section>
-            <section id="moviesList">
+                        <% genreList.forEach(genre=> { %>
+                            <a href="/genre/<%- genre.id %>/page/1">
+                                <li <% if (genreChosen) { if (genreID==genre.id) {%> class="active-genre-li" <% }}%>>
+                                        <%= genre.name %>
+                                </li>
+                            </a>
+                            <% }) %>
+                    </ul>
+                </section>
+                <section id="sorting"> <!-- Sorting options -->
+                    <h2>Sort by:</h2>
+                    <ul>
+                        <% let sorting = require("../../data") %>
+                        <li>Popularity</li>
+                        <li>Rating</li>
+                    </ul>
+                </section>
+            </div>
+
+            <section id="moviesList"> <!-- Movies list -->
                 <% movies.results.forEach(movie=> { %>
                     <div class="movieCard">
                         <a href="/details/<%= movie.id %>">
