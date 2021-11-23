@@ -66,6 +66,9 @@ body {
 .movieCard:hover {
   transform: scale(1.025);
 }
+.movieCard:hover img {
+  box-shadow: 2.5px 2.5px 5px 0 var(--shadow-color);
+}
 .movieCard img {
   width: 100%;
   min-height: 80%;
@@ -73,9 +76,6 @@ body {
   border-radius: 15px;
   box-shadow: 5px 5px 5px 0 var(--shadow-color);
   transition: 0.2s;
-}
-.movieCard img:hover {
-  box-shadow: 2.5px 2.5px 5px 0 var(--shadow-color);
 }
 .movieCard p {
   padding: 0 20px;
