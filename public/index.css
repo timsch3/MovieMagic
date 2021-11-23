@@ -63,6 +63,9 @@ body {
 #activeSorting {
   text-decoration: underline;
 }
+#activeSorting:hover {
+  cursor: default;
+}
 #sorting li:hover {
   text-decoration: underline;
   cursor: pointer;
