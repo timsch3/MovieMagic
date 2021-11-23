@@ -7,4 +7,5 @@ Planned features:
 - Showing active genre ✔
 - Remove genre filter by clicking on the active genre
 - Clickable genres on details page
+- Show rating as star icons
 - Sorting movies by various categories the API offers (right now only popularity by default)
