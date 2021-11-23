@@ -32,13 +32,13 @@
                 <section id="sorting"> <!-- Sorting options -->
                     <h2>Sort by:</h2>
                     <ul>
-                        <a href="/sorting/popular">
-                            <li <% if (activeSorting == "popular") {%>
-                                id="activeSorting" <% } %>}>Most popular</li>
+                        <a href="/sorting/popular" <% if (activeSorting == "popular") {%>
+                            id="activeSorting" <% } %>}>
+                            <li>Most popular</li>
                         </a>
-                        <a href="/sorting/top_rated">
-                            <li <% if (activeSorting == "top_rated") {%>
-                                id="activeSorting" <% } %>}>Top rated</li>
+                        <a href="/sorting/top_rated" <% if (activeSorting == "top_rated") {%>
+                            id="activeSorting" <% } %>}>
+                            <li>Top rated</li>
                         </a>
                     </ul>
                 </section>

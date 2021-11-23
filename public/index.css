@@ -60,15 +60,14 @@ body {
 #sorting ul {
   list-style-type: none;
 }
-#activeSorting {
+#sorting a:hover {
+  text-decoration: underline;
+}
+#activeSorting > li {
   text-decoration: underline;
 }
 #activeSorting:hover {
   cursor: default;
-}
-#sorting li:hover {
-  text-decoration: underline;
-  cursor: pointer;
 }
 #genres {
   padding: 3vh 1.25vw 0 5vw;
