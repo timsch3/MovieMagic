@@ -1,28 +1,43 @@
-<footer>
-  <!-- pages navigation -->
-  <% let path // set path variable if (genreChosen) { path =
-  `/genre/${genreID}/page/` } else if (searchTermEntered) { path =
-  `/search/${searchTerm}/page/` } else { path = '/page/' } if (activePage > 1) {
-  /* arrow navs back */ %>
-  <a href="<%= path %>1"><<</a>
-  <a href="<%= path %><%= activePage - 1 %>"><</a>
-  <% } %> <% if (activePage <= 5) { // first 5 pages for (let i=1; i <= 10; i++)
-  { if (i == activePage) { %>
-  <a href="<%= path %><%= i %>" class="activePage"><%= i %></a>
-  <% } else { %>
-  <a href="<%= path %><%= i %>"><%= i %></a>
-  <% }} } else if (activePage >= 1000 - 5) { // last 5 pages for (let i = 1000 -
-  10; i <= 1000; i++) { if (i == activePage) { %>
-  <a href="<%= path %><%= i %>" class="activePage"><%= i %></a>
-  <% } else { %>
-  <a href="<%= path %><%= i %>"><%= i %></a>
-  <% }} } else { // pages between 5 and max - 5 for (let i = activePage - 5; i
-  <= activePage + 5; i++) { if (i == activePage) { %>
-  <a href="<%= path %><%= i %>" class="activePage"><%= i %></a>
-  <% } else { %>
-  <a href="<%= path %><%= i %>"><%= i %></a>
-  <% }} }%> <% if (activePage < 1000) { /* arrow navs forward */ %>
-  <a href="<%= path %><%= activePage + 1 %>">></a>
-  <a href="<%= path %><%= 1000 %>">>></a>
-  <% } %>
+<footer> <!-- pages navigation -->
+    <% let path
+    // set path variable
+    if (genreChosen) {
+        path = `/genre/${genreID}/page/`
+    } else if (searchTermEntered) {
+        path = `/search/${searchTerm}/page/`    
+    } else {
+        path = '/page/'
+    }
+        if (activePage > 1) { /* arrow navs back */ %>
+            <a href="<%= path %>1"><<</a>
+            <a href="<%= path %><%= activePage - 1 %>"><</a>
+            <% } %>
+        <% if (activePage <= 5) { // first 5 pages
+            for (let i=1; i <= 10; i++) {
+                if (i == activePage) { %>
+                    <a href="<%= path %><%= i %>" class="activePage"><%= i %></a>
+                <% } else { %>
+                    <a href="<%= path %><%= i %>"><%= i %></a>
+            <% }}
+        }
+            else if (activePage >= 1000 - 5) { // last 5 pages
+                for (let i = 1000 - 10; i <= 1000; i++) { 
+                    if (i == activePage) { %>
+                        <a href="<%= path %><%= i %>" class="activePage"><%= i %></a>
+                <% } else { %>
+                    <a href="<%= path %><%= i %>"><%= i %></a>
+            <% }}
+            }
+            else { // pages between 5 and max - 5
+                for (let i = activePage - 5; i <= activePage + 5; i++) { 
+                    if (i == activePage) { %>
+                        <a href="<%= path %><%= i %>" class="activePage"><%= i %></a>
+                    <% } else { %>
+                        <a href="<%= path %><%= i %>"><%= i %></a>
+                <% }}
+            }%>
+        <% if (activePage < 1000) { /* arrow navs forward */ %>
+            <a href="<%= path %><%= activePage + 1 %>">></a>
+            <a href="<%= path %><%= 1000 %>">>></a>
+        <% } %>
 </footer>
